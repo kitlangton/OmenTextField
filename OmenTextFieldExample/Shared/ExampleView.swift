@@ -1,14 +1,12 @@
-# OmenTextField
+//
+//  ContentView.swift
+//  Shared
+//
+//  Created by Kit Langton on 12/22/20.
+//
 
-A better TextField for SwiftUI. A growing, multiline, auto-focusable TextField supporting bindable focus.
-
-## Example
-
-A simple example is included in the OmenTextFieldExample subproject.
-
-```swift
-import SwiftUI
 import OmenTextField
+import SwiftUI
 
 public struct ExampleView: View {
     @State var frontText = ""
@@ -42,8 +40,13 @@ public struct ExampleView: View {
         .animation(.spring())
     }
 }
-```
 
-## Todo
-
-- [ ] macOS support (using NSTextView)
+struct ExampleView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            ExampleView()
+                .navigationTitle("Example")
+        }
+        .preferredColorScheme(.dark)
+    }
+}

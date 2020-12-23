@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4732BD1A2592DC5F001DF8B2 /* OmenTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 4732BD192592DC5F001DF8B2 /* OmenTextView */; };
+		47BCC32D2593133100405986 /* OmenTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 47BCC32C2593133100405986 /* OmenTextView */; };
+		47BCC333259315A800405986 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BCC332259315A800405986 /* ExampleView.swift */; };
+		47BCC334259315A800405986 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BCC332259315A800405986 /* ExampleView.swift */; };
+		47F1D1EF2592D7F1003BABD7 /* OmenTextViewExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1D1DC2592D7F0003BABD7 /* OmenTextViewExampleApp.swift */; };
+		47F1D1F02592D7F1003BABD7 /* OmenTextViewExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1D1DC2592D7F0003BABD7 /* OmenTextViewExampleApp.swift */; };
+		47F1D1F32592D7F1003BABD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F1D1DE2592D7F1003BABD7 /* Assets.xcassets */; };
+		47F1D1F42592D7F1003BABD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F1D1DE2592D7F1003BABD7 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		47BCC332259315A800405986 /* ExampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
+		47F1D1DC2592D7F0003BABD7 /* OmenTextViewExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmenTextViewExampleApp.swift; sourceTree = "<group>"; };
+		47F1D1DE2592D7F1003BABD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		47F1D1E32592D7F1003BABD7 /* OmenTextViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmenTextViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		47F1D1E62592D7F1003BABD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47F1D1EB2592D7F1003BABD7 /* OmenTextViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmenTextViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		47F1D1ED2592D7F1003BABD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47F1D1EE2592D7F1003BABD7 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		47F1D2072592D8FD003BABD7 /* OmenTextView */ = {isa = PBXFileReference; lastKnownFileType = folder; name = OmenTextView; path = ..; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		47F1D1E02592D7F1003BABD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4732BD1A2592DC5F001DF8B2 /* OmenTextView in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47F1D1E82592D7F1003BABD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47BCC32D2593133100405986 /* OmenTextView in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4732BD182592DC5F001DF8B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		47F1D1D62592D7F0003BABD7 = {
+			isa = PBXGroup;
+			children = (
+				47F1D2072592D8FD003BABD7 /* OmenTextView */,
+				47F1D1DB2592D7F0003BABD7 /* Shared */,
+				47F1D1E52592D7F1003BABD7 /* iOS */,
+				47F1D1EC2592D7F1003BABD7 /* macOS */,
+				47F1D1E42592D7F1003BABD7 /* Products */,
+				4732BD182592DC5F001DF8B2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		47F1D1DB2592D7F0003BABD7 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				47BCC332259315A800405986 /* ExampleView.swift */,
+				47F1D1DC2592D7F0003BABD7 /* OmenTextViewExampleApp.swift */,
+				47F1D1DE2592D7F1003BABD7 /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		47F1D1E42592D7F1003BABD7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47F1D1E32592D7F1003BABD7 /* OmenTextViewExample.app */,
+				47F1D1EB2592D7F1003BABD7 /* OmenTextViewExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		47F1D1E52592D7F1003BABD7 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				47F1D1E62592D7F1003BABD7 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		47F1D1EC2592D7F1003BABD7 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				47F1D1ED2592D7F1003BABD7 /* Info.plist */,
+				47F1D1EE2592D7F1003BABD7 /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		47F1D1E22592D7F1003BABD7 /* OmenTextFieldExample (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47F1D1F72592D7F1003BABD7 /* Build configuration list for PBXNativeTarget "OmenTextFieldExample (iOS)" */;
+			buildPhases = (
+				47F1D1DF2592D7F1003BABD7 /* Sources */,
+				47F1D1E02592D7F1003BABD7 /* Frameworks */,
+				47F1D1E12592D7F1003BABD7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OmenTextFieldExample (iOS)";
+			packageProductDependencies = (
+				4732BD192592DC5F001DF8B2 /* OmenTextView */,
+			);
+			productName = "OmenTextViewExample (iOS)";
+			productReference = 47F1D1E32592D7F1003BABD7 /* OmenTextViewExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		47F1D1EA2592D7F1003BABD7 /* OmenTextFieldExample (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47F1D1FA2592D7F1003BABD7 /* Build configuration list for PBXNativeTarget "OmenTextFieldExample (macOS)" */;
+			buildPhases = (
+				47F1D1E72592D7F1003BABD7 /* Sources */,
+				47F1D1E82592D7F1003BABD7 /* Frameworks */,
+				47F1D1E92592D7F1003BABD7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OmenTextFieldExample (macOS)";
+			packageProductDependencies = (
+				47BCC32C2593133100405986 /* OmenTextView */,
+			);
+			productName = "OmenTextViewExample (macOS)";
+			productReference = 47F1D1EB2592D7F1003BABD7 /* OmenTextViewExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		47F1D1D72592D7F0003BABD7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					47F1D1E22592D7F1003BABD7 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					47F1D1EA2592D7F1003BABD7 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 47F1D1DA2592D7F0003BABD7 /* Build configuration list for PBXProject "OmenTextViewExample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 47F1D1D62592D7F0003BABD7;
+			productRefGroup = 47F1D1E42592D7F1003BABD7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				47F1D1E22592D7F1003BABD7 /* OmenTextFieldExample (iOS) */,
+				47F1D1EA2592D7F1003BABD7 /* OmenTextFieldExample (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		47F1D1E12592D7F1003BABD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47F1D1F32592D7F1003BABD7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47F1D1E92592D7F1003BABD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47F1D1F42592D7F1003BABD7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		47F1D1DF2592D7F1003BABD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47F1D1EF2592D7F1003BABD7 /* OmenTextViewExampleApp.swift in Sources */,
+				47BCC333259315A800405986 /* ExampleView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47F1D1E72592D7F1003BABD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47F1D1F02592D7F1003BABD7 /* OmenTextViewExampleApp.swift in Sources */,
+				47BCC334259315A800405986 /* ExampleView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		47F1D1F52592D7F1003BABD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		47F1D1F62592D7F1003BABD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		47F1D1F82592D7F1003BABD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QC99C9JE59;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kitlangton.OmenTextViewExample;
+				PRODUCT_NAME = OmenTextViewExample;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		47F1D1F92592D7F1003BABD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QC99C9JE59;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kitlangton.OmenTextViewExample;
+				PRODUCT_NAME = OmenTextViewExample;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		47F1D1FB2592D7F1003BABD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = QC99C9JE59;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kitlangton.OmenTextViewExample;
+				PRODUCT_NAME = OmenTextViewExample;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		47F1D1FC2592D7F1003BABD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = QC99C9JE59;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kitlangton.OmenTextViewExample;
+				PRODUCT_NAME = OmenTextViewExample;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		47F1D1DA2592D7F0003BABD7 /* Build configuration list for PBXProject "OmenTextViewExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47F1D1F52592D7F1003BABD7 /* Debug */,
+				47F1D1F62592D7F1003BABD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47F1D1F72592D7F1003BABD7 /* Build configuration list for PBXNativeTarget "OmenTextFieldExample (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47F1D1F82592D7F1003BABD7 /* Debug */,
+				47F1D1F92592D7F1003BABD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47F1D1FA2592D7F1003BABD7 /* Build configuration list for PBXNativeTarget "OmenTextFieldExample (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47F1D1FB2592D7F1003BABD7 /* Debug */,
+				47F1D1FC2592D7F1003BABD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4732BD192592DC5F001DF8B2 /* OmenTextView */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OmenTextView;
+		};
+		47BCC32C2593133100405986 /* OmenTextView */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OmenTextView;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 47F1D1D72592D7F0003BABD7 /* Project object */;
+}
