@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4732BD1A2592DC5F001DF8B2 /* OmenTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 4732BD192592DC5F001DF8B2 /* OmenTextView */; };
-		47BCC32D2593133100405986 /* OmenTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 47BCC32C2593133100405986 /* OmenTextView */; };
+		474062D52594157B00C7153C /* OmenTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 474062D42594157B00C7153C /* OmenTextField */; };
+		479C8F9B259411990036FC14 /* OmenTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 479C8F9A259411990036FC14 /* OmenTextField */; };
 		47BCC333259315A800405986 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BCC332259315A800405986 /* ExampleView.swift */; };
 		47BCC334259315A800405986 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BCC332259315A800405986 /* ExampleView.swift */; };
 		47F1D1EF2592D7F1003BABD7 /* OmenTextViewExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1D1DC2592D7F0003BABD7 /* OmenTextViewExampleApp.swift */; };
@@ -34,7 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4732BD1A2592DC5F001DF8B2 /* OmenTextView in Frameworks */,
+				474062D52594157B00C7153C /* OmenTextField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,7 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47BCC32D2593133100405986 /* OmenTextView in Frameworks */,
+				479C8F9B259411990036FC14 /* OmenTextField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +121,7 @@
 			);
 			name = "OmenTextFieldExample (iOS)";
 			packageProductDependencies = (
-				4732BD192592DC5F001DF8B2 /* OmenTextView */,
+				474062D42594157B00C7153C /* OmenTextField */,
 			);
 			productName = "OmenTextViewExample (iOS)";
 			productReference = 47F1D1E32592D7F1003BABD7 /* OmenTextViewExample.app */;
@@ -141,7 +141,7 @@
 			);
 			name = "OmenTextFieldExample (macOS)";
 			packageProductDependencies = (
-				47BCC32C2593133100405986 /* OmenTextView */,
+				479C8F9A259411990036FC14 /* OmenTextField */,
 			);
 			productName = "OmenTextViewExample (macOS)";
 			productReference = 47F1D1EB2592D7F1003BABD7 /* OmenTextViewExample.app */;
@@ -164,7 +164,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 47F1D1DA2592D7F0003BABD7 /* Build configuration list for PBXProject "OmenTextViewExample" */;
+			buildConfigurationList = 47F1D1DA2592D7F0003BABD7 /* Build configuration list for PBXProject "OmenTextFieldExample" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -431,7 +431,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		47F1D1DA2592D7F0003BABD7 /* Build configuration list for PBXProject "OmenTextViewExample" */ = {
+		47F1D1DA2592D7F0003BABD7 /* Build configuration list for PBXProject "OmenTextFieldExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				47F1D1F52592D7F1003BABD7 /* Debug */,
@@ -461,13 +461,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4732BD192592DC5F001DF8B2 /* OmenTextView */ = {
+		474062D42594157B00C7153C /* OmenTextField */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = OmenTextView;
+			productName = OmenTextField;
 		};
-		47BCC32C2593133100405986 /* OmenTextView */ = {
+		479C8F9A259411990036FC14 /* OmenTextField */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = OmenTextView;
+			productName = OmenTextField;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

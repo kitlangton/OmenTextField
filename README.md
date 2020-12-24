@@ -2,6 +2,8 @@
 
 A better TextField for SwiftUI. A growing, multiline, auto-focusable TextField supporting bindable focus.
 
+This has been pulled out of my flashcard app, [Omen](https://omen.cards)—in case you need some help memorizing SwiftUI overloads 😜
+
 ## Example
 
 A simple example is included in the OmenTextFieldExample subproject.

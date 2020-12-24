@@ -6,16 +6,20 @@ import PackageDescription
 let package = Package(
     name: "OmenTextField",
     platforms: [
-        .iOS(.v14)
+        .iOS(.v14),
+        .macOS(.v11),
     ],
     products: [
         .library(
             name: "OmenTextField",
-            targets: ["OmenTextField"])
+            targets: ["OmenTextField"]
+        ),
     ],
 
     targets: [
         .target(
             name: "OmenTextField",
-            dependencies: [])
-    ])
+            dependencies: []
+        ),
+    ]
+)
