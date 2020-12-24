@@ -4,7 +4,8 @@ A better TextField for SwiftUI. A growing, multiline, auto-focusable TextField s
 
 This has been pulled out of my flashcard app, [Omen](https://omen.cards)—in case you need some help memorizing SwiftUI overloads 😜
 
-![](OmenTextFieldExample/macOS-version.gif)
+<img src="/OmenTextFieldExample/macOS-version.gif" width="350"/>
+
 
 ## Example
 
