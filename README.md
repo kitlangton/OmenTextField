@@ -10,45 +10,15 @@ This has been pulled out of my flashcard app, [Omen](https://omen.cards)—in ca
 
 ## Example
 
-A simple example is included in the OmenTextFieldExample subproject.
+A simple example app is included in the OmenTextFieldExample subproject.
 
-```swift
-import SwiftUI
-import OmenTextField
+## Installation with Swift Package Manager
 
-public struct ExampleView: View {
-    @State var frontText = ""
-    @State var frontFocused = false
+You can add OmenTextField to an Xcode project by adding it as a package dependency.
 
-    @State var backText = ""
-    @State var backFocused = false
-
-    public init() {}
-
-    public var body: some View {
-        Form {
-            Section(header: Text("Front")) {
-                OmenTextField("Front", text: $frontText, isFocused: $frontFocused)
-            }
-
-            Section(header: Text("Back")) {
-                OmenTextField("Back", text: $backText, isFocused: $backFocused)
-            }
-
-            Section(header: Text("Focus")) {
-                Toggle(isOn: $frontFocused, label: {
-                    Text("Front Focused")
-                })
-
-                Toggle(isOn: $backFocused, label: {
-                    Text("Back Focused")
-                })
-            }
-        }
-        .animation(.spring())
-    }
-}
-```
+1. From the File menu, select Swift Packages › Add Package Dependency…
+2. Paste "https://github.com/kitlangton/OmenTextField" into the package repository URL text field
+3. Hit Enter!
 
 ## To-do List
 
