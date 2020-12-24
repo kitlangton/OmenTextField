@@ -46,6 +46,9 @@ public struct ExampleView: View {
 }
 ```
 
-## Todo
+## To-do List
 
-- [ ] macOS support (using NSTextView)
+- [x] iOS support (using UITextView)
+- [x] macOS support (using NSTextView)
+- [ ] Add overrideable `returnKey` for iOS
+- [ ] Add `onCommit` callback
