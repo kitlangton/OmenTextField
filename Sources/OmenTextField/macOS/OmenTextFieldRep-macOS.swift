@@ -13,8 +13,13 @@ import SwiftUI
         var isFocused: Binding<Bool>?
         @Binding var height: CGFloat
 
+        // Unused in macOS, but retained for API parity.
+        var returnKeyType: OmenTextField.ReturnKeyType
+
+        var onCommit: (() -> Void)?
+
         func makeNSView(context: Context) -> NSTextView {
-            let view = FocusAwareTextView()
+            let view = OmenNSTextView()
             view.onFocusChange = { self.isFocused?.wrappedValue = $0 }
             view.font = NSFont.preferredFont(forTextStyle: .body)
             view.backgroundColor = .clear
@@ -31,7 +36,9 @@ import SwiftUI
         func updateNSView(_ view: NSTextView, context _: Context) {
             if view.string != text {
                 view.string = text
-                height = view.textHeight()
+                DispatchQueue.main.async {
+                    height = view.textHeight()
+                }
             }
 
             if let isFocused = isFocused?.wrappedValue {
@@ -69,11 +76,25 @@ import SwiftUI
             func textDidEndEditing(_: Notification) {
                 rep.isFocused?.wrappedValue = false
             }
+
+            func textView(_: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+                // Call `onCommit` when the Return key is pressed without Shift.
+                // If Shift-Return is pressed, a newline will be inserted.
+                if commandSelector == #selector(NSResponder.insertNewline(_:)),
+                   let event = NSApp.currentEvent,
+                   !event.modifierFlags.contains(.shift)
+                {
+                    rep.onCommit?()
+                    return true
+                }
+
+                return false
+            }
         }
     }
 
     /// This is necessary because `textDidBeginEditing` on `NSTextViewDelegate` only triggers once the user types.
-    class FocusAwareTextView: NSTextView {
+    class OmenNSTextView: NSTextView {
         var onFocusChange: (Bool) -> Void = { _ in }
 
         override func becomeFirstResponder() -> Bool {

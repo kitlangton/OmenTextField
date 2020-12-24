@@ -12,6 +12,8 @@ import SwiftUI
         @Binding var text: String
         var isFocused: Binding<Bool>?
         @Binding var height: CGFloat
+        var returnKeyType: OmenTextField.ReturnKeyType
+        var onCommit: (() -> Void)?
 
         func makeUIView(context: Context) -> UITextView {
             let uiView = UITextView()
@@ -21,6 +23,7 @@ import SwiftUI
             uiView.textContainerInset = .zero
             uiView.textContainer.lineFragmentPadding = 0
             uiView.text = text
+            uiView.returnKeyType = returnKeyType.uiReturnKey
             height = uiView.textHeight()
             return uiView
         }
@@ -49,6 +52,12 @@ import SwiftUI
 
             internal init(rep: OmenTextFieldRep) {
                 self.rep = rep
+            }
+
+            func textView(_: UITextView, shouldChangeTextIn _: NSRange, replacementText text: String) -> Bool {
+                guard let onCommit = rep.onCommit, text == "\n" else { return true }
+                onCommit()
+                return false
             }
 
             func textViewDidChange(_ textView: UITextView) {

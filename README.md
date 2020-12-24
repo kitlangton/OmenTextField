@@ -4,8 +4,9 @@ A better TextField for SwiftUI. A growing, multiline, auto-focusable TextField s
 
 This has been pulled out of my flashcard app, [Omen](https://omen.cards)—in case you need some help memorizing SwiftUI overloads 😜
 
-<img src="/OmenTextFieldExample/macOS-version.gif" width="350"/>
+<img src="/OmenTextFieldExample/iOS-version.gif" width="350"/>
 
+<img src="/OmenTextFieldExample/macOS-version.gif" width="350"/>
 
 ## Example
 
@@ -53,5 +54,5 @@ public struct ExampleView: View {
 
 - [x] iOS support (using UITextView)
 - [x] macOS support (using NSTextView)
-- [ ] Add overrideable `returnKey` for iOS
-- [ ] Add `onCommit` callback
+- [x] Add overrideable `returnKey` for iOS
+- [x] Add `onCommit` callback
