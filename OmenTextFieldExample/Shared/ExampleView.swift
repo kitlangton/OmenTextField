@@ -10,14 +10,17 @@ import SwiftUI
 
 struct ExampleView: View {
     @State var frontText = ""
-    @State var frontFocused = false
     @State var frontReturnKeyType = OmenTextField.ReturnKeyType.next
 
     @State var backText = ""
-    @State var backFocused = false
 
     @State var isFinished = false
 
+    @State var focus: Focus?
+
+    enum Focus {
+        case front, back
+    }
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -26,11 +29,10 @@ struct ExampleView: View {
                     OmenTextField(
                         "Front",
                         text: $frontText,
-                        isFocused: $frontFocused,
+                        isFocused: $focus.equalTo(.front),
                         returnKeyType: frontReturnKeyType
                     ) {
-                        frontFocused = false
-                        backFocused = true
+                        focus = .back
                     }
 
                     #if os(iOS)
@@ -42,10 +44,10 @@ struct ExampleView: View {
                     OmenTextField(
                         "Back",
                         text: $backText,
-                        isFocused: $backFocused,
+                        isFocused: $focus.equalTo(.back),
                         returnKeyType: .done
                     ) {
-                        backFocused = false
+                        focus = nil
                         frontText = ""
                         backText = ""
                         isFinished = true
@@ -53,11 +55,11 @@ struct ExampleView: View {
                 }
 
                 Section(header: Text("Focus")) {
-                    Toggle(isOn: $frontFocused, label: {
+                    Toggle(isOn: $focus.equalTo(.front), label: {
                         Text("Front Focused")
                     })
 
-                    Toggle(isOn: $backFocused, label: {
+                    Toggle(isOn: $focus.equalTo(.back), label: {
                         Text("Back Focused")
                     })
                 }
@@ -67,8 +69,10 @@ struct ExampleView: View {
                 // `becomeFirstResponder` and SwiftUI. Ideally, this can be moved into the
                 // `OmenTextViewRep`, perhaps it can repeatedly attempt to `becomeFirstResponder`
                 // until it succeeds. I'm just wary of infinite loops.
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    frontFocused = true
+                // FURTHERMORE: This delay is only necessary when within a NavigationView.
+                // It appears that NavigationView steals the focus on load somehow.
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                    focus = .front
                 }
             }
 
@@ -110,6 +114,20 @@ struct ExampleView: View {
             }
         }
     #endif
+}
+
+extension Binding {
+    func equalTo<A: Equatable>(_ value: A) -> Binding<Bool> where Value == A? {
+        Binding<Bool> {
+            wrappedValue == value
+        } set: {
+            if $0 {
+                wrappedValue = value
+            } else if wrappedValue == value {
+                wrappedValue = nil
+            }
+        }
+    }
 }
 
 struct ExampleView_Previews: PreviewProvider {
