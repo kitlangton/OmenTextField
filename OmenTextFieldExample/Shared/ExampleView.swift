@@ -11,6 +11,7 @@ import SwiftUI
 struct ExampleView: View {
     @State var frontText = ""
     @State var frontFocused = false
+    @State var frontReturnKeyType = OmenTextField.ReturnKeyType.next
 
     @State var backText = ""
     @State var backFocused = false
@@ -26,11 +27,15 @@ struct ExampleView: View {
                         "Front",
                         text: $frontText,
                         isFocused: $frontFocused,
-                        returnKeyType: .next
+                        returnKeyType: frontReturnKeyType
                     ) {
                         frontFocused = false
                         backFocused = true
                     }
+
+                    #if os(iOS)
+                        returnKeyPicker()
+                    #endif
                 }
 
                 Section(header: Text("Back")) {
@@ -83,6 +88,28 @@ struct ExampleView: View {
         }
         .animation(.spring())
     }
+
+    #if os(iOS)
+        func returnKeyPicker() -> some View {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(OmenTextField.ReturnKeyType.allCases, id: \.self) { returnKeyType in
+                        Text(returnKeyType.rawValue)
+                            .padding(4)
+                            .padding(.horizontal, 4)
+                            .background(frontReturnKeyType == returnKeyType ? Color.blue :
+                                Color.clear)
+                            .cornerRadius(3)
+                            .animation(.interactiveSpring())
+                            .onTapGesture {
+                                frontReturnKeyType = returnKeyType
+                                UISelectionFeedbackGenerator().selectionChanged()
+                            }
+                    }
+                }
+            }
+        }
+    #endif
 }
 
 struct ExampleView_Previews: PreviewProvider {
