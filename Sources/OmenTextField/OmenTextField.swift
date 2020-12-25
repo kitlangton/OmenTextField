@@ -45,6 +45,7 @@ public struct OmenTextField: View {
                 .foregroundColor(.secondary)
                 .opacity(text.isEmpty ? 0.5 : 0)
                 .animation(nil)
+
             OmenTextFieldRep(
                 text: $text,
                 isFocused: isFocused,
@@ -60,11 +61,14 @@ public struct OmenTextField: View {
 // MARK: - ReturnKeyType
 
 public extension OmenTextField {
-    enum ReturnKeyType {
+    enum ReturnKeyType: String, CaseIterable {
         case done
         case next
         case `default`
         case `continue`
+        case go
+        case search
+        case send
 
         #if os(iOS)
             var uiReturnKey: UIReturnKeyType {
@@ -77,6 +81,12 @@ public extension OmenTextField {
                     return .default
                 case .continue:
                     return .continue
+                case .go:
+                    return .go
+                case .search:
+                    return .search
+                case .send:
+                    return .send
                 }
             }
         #endif
