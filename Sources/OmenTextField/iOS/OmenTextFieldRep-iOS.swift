@@ -15,33 +15,53 @@ import SwiftUI
         var returnKeyType: OmenTextField.ReturnKeyType
         var onCommit: (() -> Void)?
 
+        // MARK: - Make
+
         func makeUIView(context: Context) -> UITextView {
-            let uiView = UITextView()
-            uiView.font = UIFont.preferredFont(forTextStyle: .body)
-            uiView.backgroundColor = .clear
-            uiView.delegate = context.coordinator
-            uiView.textContainerInset = .zero
-            uiView.textContainer.lineFragmentPadding = 0
-            uiView.text = text
-            uiView.returnKeyType = returnKeyType.uiReturnKey
-            height = uiView.textHeight()
-            return uiView
+            let view = CustomUITextView(rep: self)
+            view.font = UIFont.preferredFont(forTextStyle: .body)
+            view.backgroundColor = .clear
+            view.delegate = context.coordinator
+            view.textContainerInset = .zero
+            view.textContainer.lineFragmentPadding = 0
+            view.text = text
+            view.returnKeyType = returnKeyType.uiReturnKey
+            height = view.textHeight()
+            return view
         }
 
-        func updateUIView(_ uiView: UITextView, context _: Context) {
-            if uiView.text != text {
-                uiView.text = text
-                height = uiView.textHeight()
+        // MARK: - Update
+
+        func updateUIView(_ view: UITextView, context: Context) {
+            if view.returnKeyType != returnKeyType.uiReturnKey {
+                view.returnKeyType = returnKeyType.uiReturnKey
+                view.reloadInputViews()
+                return
             }
 
-            if let isFocused = isFocused?.wrappedValue {
-                if isFocused, !uiView.isFirstResponder {
-                    uiView.becomeFirstResponder()
-                } else if !isFocused, uiView.isFirstResponder {
-                    uiView.resignFirstResponder()
-                }
+            if view.text != text {
+                view.text = text
+                height = view.textHeight()
+            }
+
+            updateFocus(view, context: context)
+        }
+
+        private func updateFocus(_ view: UITextView, context: Context) {
+            guard let isFocused = isFocused?.wrappedValue else { return }
+            if isFocused,
+               view.window != nil,
+               !view.isFirstResponder,
+               view.canBecomeFirstResponder,
+               context.environment.isEnabled
+            {
+                view.becomeFirstResponder()
+            } else if !isFocused, view.isFirstResponder {
+                view.resignFirstResponder()
             }
         }
+
+        // MARK: - Coordinator
 
         func makeCoordinator() -> Coordinator {
             Coordinator(rep: self)
@@ -64,16 +84,36 @@ import SwiftUI
                 rep.text = textView.text
                 rep.height = textView.textHeight()
             }
-
-            func textViewDidBeginEditing(_: UITextView) {
-                rep.isFocused?.wrappedValue = true
-            }
-
-            func textViewDidEndEditing(_: UITextView) {
-                rep.isFocused?.wrappedValue = false
-            }
         }
     }
+
+    // MARK: - Custom View
+
+    class CustomUITextView: UITextView {
+        let rep: OmenTextFieldRep
+
+        internal init(rep: OmenTextFieldRep) {
+            self.rep = rep
+            super.init(frame: .zero, textContainer: nil)
+        }
+
+        @available(*, unavailable)
+        required init?(coder _: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+
+        override func becomeFirstResponder() -> Bool {
+            rep.isFocused?.wrappedValue = true
+            return super.becomeFirstResponder()
+        }
+
+        override func resignFirstResponder() -> Bool {
+            rep.isFocused?.wrappedValue = false
+            return super.resignFirstResponder()
+        }
+    }
+
+    // MARK: - Useful Extensions
 
     extension UITextView {
         func textHeight() -> CGFloat {
