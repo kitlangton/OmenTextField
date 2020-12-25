@@ -8,7 +8,7 @@
 import OmenTextField
 import SwiftUI
 
-public struct ExampleView: View {
+struct ExampleView: View {
     @State var frontText = ""
     @State var frontFocused = false
 
@@ -17,9 +17,8 @@ public struct ExampleView: View {
 
     @State var isFinished = false
 
-    public init() {}
 
-    public var body: some View {
+    var body: some View {
         ZStack(alignment: .bottom) {
             Form {
                 Section(header: Text("Front")) {
