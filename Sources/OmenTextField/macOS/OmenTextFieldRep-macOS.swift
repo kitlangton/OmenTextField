@@ -19,8 +19,7 @@ import SwiftUI
         var onCommit: (() -> Void)?
 
         func makeNSView(context: Context) -> NSTextView {
-            let view = OmenNSTextView()
-            view.onFocusChange = { self.isFocused?.wrappedValue = $0 }
+            let view = CustomNSTextView(rep: self)
             view.font = NSFont.preferredFont(forTextStyle: .body)
             view.backgroundColor = .clear
             view.delegate = context.coordinator
@@ -44,7 +43,7 @@ import SwiftUI
             if let isFocused = isFocused?.wrappedValue {
                 DispatchQueue.main.async {
                     let isFirstResponder = view.window?.firstResponder == view
-                    if isFocused, !isFirstResponder {
+                    if isFocused, view.window != nil, !isFirstResponder {
                         view.window?.makeFirstResponder(view)
                     } else if !isFocused, isFirstResponder {
                         view.window?.makeFirstResponder(nil)
@@ -73,10 +72,6 @@ import SwiftUI
                 }
             }
 
-            func textDidEndEditing(_: Notification) {
-                rep.isFocused?.wrappedValue = false
-            }
-
             func textView(_: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
                 // Call `onCommit` when the Return key is pressed without Shift.
                 // If Shift-Return is pressed, a newline will be inserted.
@@ -94,18 +89,36 @@ import SwiftUI
     }
 
     /// This is necessary because `textDidBeginEditing` on `NSTextViewDelegate` only triggers once the user types.
-    class OmenNSTextView: NSTextView {
-        var onFocusChange: (Bool) -> Void = { _ in }
+    class CustomNSTextView: NSTextView {
+        let rep: OmenTextFieldRep
+
+        internal init(rep: OmenTextFieldRep) {
+            self.rep = rep
+
+            super.init(frame: .zero, textContainer: NSTextView().textContainer)
+        }
+
+        @available(*, unavailable)
+        required init?(coder _: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
 
         override func becomeFirstResponder() -> Bool {
-            onFocusChange(true)
+            rep.isFocused?.wrappedValue = true
             return super.becomeFirstResponder()
+        }
+
+        override func resignFirstResponder() -> Bool {
+            rep.isFocused?.wrappedValue = false
+            return super.resignFirstResponder()
         }
     }
 
     extension NSTextView {
         func textHeight() -> CGFloat {
-            if let layoutManager = layoutManager, let container = layoutManager.textContainers.first {
+            if let layoutManager = layoutManager,
+               let container = layoutManager.textContainers.first
+            {
                 return layoutManager.usedRect(for: container).height
             } else {
                 return frame.height
