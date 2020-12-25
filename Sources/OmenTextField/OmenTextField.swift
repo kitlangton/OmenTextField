@@ -41,9 +41,10 @@ public struct OmenTextField: View {
 
     public var body: some View {
         ZStack(alignment: .topLeading) {
-            if text.isEmpty {
-                Text(title).foregroundColor(.secondary).opacity(0.5)
-            }
+            Text(title)
+                .foregroundColor(.secondary)
+                .opacity(text.isEmpty ? 0.5 : 0)
+                .animation(nil)
             OmenTextFieldRep(
                 text: $text,
                 isFocused: isFocused,
