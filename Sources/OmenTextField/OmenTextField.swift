@@ -25,14 +25,14 @@ public struct OmenTextField: View {
     ///   - onCommit: An action to perform when the user presses the
     ///     Return key) while the text field has focus. If `nil`, a newline
     ///     will be inserted.
-    public init(
-        _ title: String,
+    public init<S: StringProtocol>(
+        _ title: S,
         text: Binding<String>,
         isFocused: Binding<Bool>? = nil,
         returnKeyType: ReturnKeyType = .default,
         onCommit: (() -> Void)? = nil
     ) {
-        self.title = title
+        self.title = String(title)
         _text = text
         self.isFocused = isFocused
         self.returnKeyType = returnKeyType
