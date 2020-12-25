@@ -25,6 +25,7 @@ import SwiftUI
             view.textContainerInset = .zero
             view.textContainer.lineFragmentPadding = 0
             view.text = text
+            view.keyboardDismissMode = .interactive
             view.returnKeyType = returnKeyType.uiReturnKey
             height = view.textHeight()
             return view
