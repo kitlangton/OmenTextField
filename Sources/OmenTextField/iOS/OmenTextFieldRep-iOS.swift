@@ -56,6 +56,7 @@ import SwiftUI
                context.environment.isEnabled
             {
                 view.becomeFirstResponder()
+                view.selectedRange = NSRange(location: view.text.count, length: 0)
             } else if !isFocused, view.isFirstResponder {
                 view.resignFirstResponder()
             }
