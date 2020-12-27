@@ -14,6 +14,8 @@ public struct OmenTextField: View {
     @State var height: CGFloat = 0
     var returnKeyType: ReturnKeyType
     var onCommit: (() -> Void)?
+    var onTab: (() -> Void)?
+    var onBackTab: (() -> Void)?
 
     /// Creates a multiline text field with a text label.
     ///
@@ -30,6 +32,8 @@ public struct OmenTextField: View {
         text: Binding<String>,
         isFocused: Binding<Bool>? = nil,
         returnKeyType: ReturnKeyType = .default,
+        onTab: (() -> Void)? = nil,
+        onBackTab: (() -> Void)? = nil,
         onCommit: (() -> Void)? = nil
     ) {
         self.title = String(title)
@@ -37,6 +41,8 @@ public struct OmenTextField: View {
         self.isFocused = isFocused
         self.returnKeyType = returnKeyType
         self.onCommit = onCommit
+        self.onTab = onTab
+        self.onBackTab = onBackTab
     }
 
     public var body: some View {
@@ -46,14 +52,26 @@ public struct OmenTextField: View {
                 .opacity(text.isEmpty ? 0.5 : 0)
                 .animation(nil)
 
-            OmenTextFieldRep(
-                text: $text,
-                isFocused: isFocused,
-                height: $height,
-                returnKeyType: returnKeyType,
-                onCommit: onCommit
-            )
-            .frame(height: height)
+            #if os(iOS)
+                OmenTextFieldRep(
+                    text: $text,
+                    isFocused: isFocused,
+                    height: $height,
+                    returnKeyType: returnKeyType,
+                    onCommit: onCommit
+                )
+                .frame(height: height)
+            #elseif os(macOS)
+                OmenTextFieldRep(
+                    text: $text,
+                    isFocused: isFocused,
+                    height: $height,
+                    onCommit: onCommit,
+                    onTab: onTab,
+                    onBackTab: onBackTab
+                )
+                .frame(height: height)
+            #endif
         }
     }
 }

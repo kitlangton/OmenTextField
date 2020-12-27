@@ -119,13 +119,7 @@ import SwiftUI
 
     extension UITextView {
         func textHeight() -> CGFloat {
-            sizeThatFits(
-                CGSize(
-                    width: frame.size.width,
-                    height: CGFloat.greatestFiniteMagnitude
-                )
-            )
-            .height
+            sizeThatFits(bounds.size).height
         }
     }
 #endif

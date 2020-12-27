@@ -12,11 +12,9 @@ import SwiftUI
         @Binding var text: String
         var isFocused: Binding<Bool>?
         @Binding var height: CGFloat
-
-        // Unused in macOS, but retained for API parity.
-        var returnKeyType: OmenTextField.ReturnKeyType
-
         var onCommit: (() -> Void)?
+        var onTab: (() -> Void)?
+        var onBackTab: (() -> Void)?
 
         func makeNSView(context: Context) -> NSTextView {
             let view = CustomNSTextView(rep: self)
@@ -75,11 +73,24 @@ import SwiftUI
             func textView(_: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
                 // Call `onCommit` when the Return key is pressed without Shift.
                 // If Shift-Return is pressed, a newline will be inserted.
-                if commandSelector == #selector(NSResponder.insertNewline(_:)),
+                if let onCommit = rep.onCommit,
+                   commandSelector == #selector(NSResponder.insertNewline(_:)),
                    let event = NSApp.currentEvent,
                    !event.modifierFlags.contains(.shift)
                 {
-                    rep.onCommit?()
+                    onCommit()
+                    return true
+                } else if
+                    let onTab = rep.onTab,
+                    commandSelector == #selector(NSResponder.insertTab(_:))
+                {
+                    onTab()
+                    return true
+                } else if
+                    let onBackTab = rep.onBackTab,
+                    commandSelector == #selector(NSResponder.insertBacktab(_:))
+                {
+                    onBackTab()
                     return true
                 }
 

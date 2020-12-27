@@ -30,10 +30,11 @@ struct ExampleView: View {
                         "Front",
                         text: $frontText,
                         isFocused: $focus.equalTo(.front),
-                        returnKeyType: frontReturnKeyType
-                    ) {
-                        focus = .back
-                    }
+                        returnKeyType: frontReturnKeyType,
+                        onCommit: {
+                            focus = .back
+                        }
+                    )
 
                     #if os(iOS)
                         returnKeyPicker()
@@ -45,13 +46,14 @@ struct ExampleView: View {
                         "Back",
                         text: $backText,
                         isFocused: $focus.equalTo(.back),
-                        returnKeyType: .done
-                    ) {
-                        focus = nil
-                        frontText = ""
-                        backText = ""
-                        isFinished = true
-                    }
+                        returnKeyType: .done,
+                        onCommit: {
+                            focus = nil
+                            frontText = ""
+                            backText = ""
+                            isFinished = true
+                        }
+                    )
                 }
 
                 Section(header: Text("Focus")) {
